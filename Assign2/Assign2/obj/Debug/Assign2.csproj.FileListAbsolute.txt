@@ -1,0 +1,20 @@
+C:\Users\deond\source\repos\Assign2\Assign2\obj\Debug\Assign2.csprojResolveAssemblyReference.cache
+C:\Users\deond\source\repos\Assign2\Assign2\obj\Debug\Assign2.Assign2.resources
+C:\Users\deond\source\repos\Assign2\Assign2\obj\Debug\Assign2.Properties.Resources.resources
+C:\Users\deond\source\repos\Assign2\Assign2\obj\Debug\Assign2.csproj.GenerateResource.Cache
+C:\Users\deond\source\repos\Assign2\Assign2\obj\Debug\Assign2.csproj.CoreCompileInputs.cache
+C:\Users\deond\source\repos\Assign2\Assign2\bin\Debug\Assign2.exe.config
+C:\Users\deond\source\repos\Assign2\Assign2\bin\Debug\Assign2.exe
+C:\Users\deond\source\repos\Assign2\Assign2\bin\Debug\Assign2.pdb
+C:\Users\deond\source\repos\Assign2\Assign2\obj\Debug\Assign2.exe
+C:\Users\deond\source\repos\Assign2\Assign2\obj\Debug\Assign2.pdb
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\bin\Debug\Assign2.exe.config
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\bin\Debug\Assign2.exe
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\bin\Debug\Assign2.pdb
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\obj\Debug\Assign2.Assign2.resources
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\obj\Debug\Assign2.Properties.Resources.resources
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\obj\Debug\Assign2.csproj.GenerateResource.Cache
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\obj\Debug\Assign2.csproj.CoreCompileInputs.cache
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\obj\Debug\Assign2.exe
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\obj\Debug\Assign2.pdb
+C:\Users\deond\Desktop\CSCI 473\Assign2\Assign2\obj\Debug\Assign2.csprojResolveAssemblyReference.cache

@@ -1,0 +1,285 @@
+Arrays
+
+	The default value of numeric array elements is 0, and reference elements have the default value null.
+
+	Ways to declare:	
+	int [] A;        // As yet, A has no size.
+	A = new int[5];  // Now A has a size (which cannot be changed).
+	int [] B = new int[4];
+	int [] C = new int[3] { 1, 2, 3 };
+	int [] D = { 4, 5, 6, 7 }; // D has size 4.
+
+	Multi-dimensional arrays:
+	int [ , ] F = new int[2, 3];
+	int [ , ,] G = new int [2, 3, 4];
+
+	Array Properties:
+	Length = total number of elements 
+	Rank = number of dimensions
+
+	Array Methods:
+	BinarySearch, Sort, Copy, Find, FindAll
+
+	Array.Sort(arrName); //uses the CompareTo method of the IComparable interface
+
+	Jagged Arrays:
+	An array of arrays
+	int[][] Jag = new int[3][];
+
+	The elements of Jag are arrays and thus are reference types, so they are initialized to null.
+
+
+Array Sorting
+
+	Arrays of value types can be sorted by just calling the sort function
+	Array.Sort(myArr);
+	But arrays of value types have to be sorted using the IComparable interface and the CompareTo function
+
+
+Namespace
+
+	Declares the scope for a set of classes 
+	System namespace contains often-used classes
+	Using statement to include a namespace
+
+
+Reference vs Value Type
+
+	Value type directly contains a value
+	Reference holds a reference (address) of where a value is located
+
+	Reference Data Types:
+	Array, String, Class, Delegate, Object, Dynamic
+
+	Value Data Types:
+	Bool, Byte, Char, Int, Long, etc
+
+
+Using Statement
+
+	The using statement has another purpose, it can be used to ensure something is deleted when we are done with it
+	For example, using statement when opening an SQL connection will automatically close at the end
+	Using statements in this way implement the IDisposable interface
+
+
+Passing Arguments
+
+	By default arguments are passed by value
+	Reference type arguments though are special. A 2nd pointer is created, but it still points to the same value, so the original value can be changed
+
+	To pass by reference use "ref" Modifier:
+	in main: YYY.MyMethod(ref J)
+	MyMthod header: void MyMethod(ref int A)
+
+	"out" Modifier:
+	Lets us pass an argument without giving it a value first
+	Same syntax as "ref" modifier
+
+	"params" Modifier:
+	Allows us to have a variable number of arguments
+	Creates a parameter array in the method
+	in main: PQR.MyMethod('Z', 4, 5, 6); // Numbers will be an array of 3 integers.
+	in MyMethod: void MyMethod5(char X, params int[] Numbers)
+
+
+Strings
+
+	2 kinds: String & StringBuilder
+	Both store characters in Unicode
+	2 bytes per character
+	StringBuilder is used when you think you are going to be making a lot of changes to the string, that way the system doesn't have to make tons of copies if it were to use the String class
+
+	String is immutable, it cannot be changed after being created
+	Any operation that appears to change it instead returns a new instance
+	The String type is stored as a prefix containing the length, followed by that many Unicode characters, followed by two bytes of binary 0.
+
+	StringBuilder is mutable, meaning the original can be changed
+	The StringBuilder type instead uses an array of Unicode characters and also stores the capacity of the array and the length of the string (but does not store a terminator). The capacity will be enlarged as needed (doubling each time).
+
+	String class properties:
+	Length: Length of the string
+	Chars[i]: the character at position i
+
+	StringBuilder class properties:
+	Length: Length of the string
+	Chars[i]: the character at position ix`
+	Capacity: The capacity of the string
+
+	String Methods:
+	String Copy(String S) //This will make a copy of a string.
+	static String Concat(String S1, String S2) //This will create a string = S1 + S2; this can also be done with +.
+	bool Equals(String S) //This asks if this string is equal to S.
+	String Substring(int M, int N) //This creates a string = part of this string, starting at position M, N characters long
+
+	StringBuilder Methods;
+	Append(Char X) // Attach X at the end of this StringBuilder
+	Insert(int N, Char X) // Insert X at position N.
+	bool Equals(StringBuilder S) // Is this instance equal to S?
+	Remove(int M, int N) // Remove all characters between positions M and N.
+	Replace(Char Oldchar, Char Newchar) // Replace all occurrences of Oldchar with NewChar.
+	String ToString() // Creates a String with the same value.
+
+
+Collections
+
+	Classes which are containers for data
+	Both strongly and weakly typed
+	Foreach can be used with any collection class (implements the IEnumerable interface)
+	System.Collections.Generic namespace contains the strongly typed collections
+	System.Collections namespace contains the weakly typed collections
+	Any collection can be copied to an array using CopyTo()
+	Collections resize dynamically
+
+	List<T>:
+	Strongly typed
+	Some features require the IComparer<T> interface
+
+	List<T> Properties:
+	Capacity -- the number of items that can be stored without resizing
+	Count -- the number of items presently in the list
+	Item[Int32 N] -- gets or sets the Nth item (0-based; N must be less than Count to avoid trouble)
+
+	List<T> Methods:
+	Add(T X) -- adds X to the list
+	Clear() -- empty out the list
+	CopyTo(T [] A) -- copies the entire list to a compatible array A
+	IndexOf(T Target) -- searches for first occurrence of Target and returns its index
+	Reverse() -- reverses the order of the list
+	Sort() -- sorts the list using a default comparer
+
+	Other Strongly Typed Collections:
+	Stack<T>, Queue<T>, Dictionary<TKey, TValue>, SortedList<TKey, TValue>
+
+	Weakly Typed Collections:
+	ArrayList, HashTable, Stack, Queue
+
+
+File I/O
+
+	Needs system.IO namespace
+
+	Reading From File:
+	using (StreamReader SR = new StreamReader("data1.txt")) 
+	{
+	    //read information from data1.txt
+	    while ((name = SR.ReadLine()) != null)
+	    {
+	        office = SR.ReadLine();
+	        phone = SR.ReadLine();
+
+	        //create new person object with data
+	        arr[InUse] = new Person(name, office, phone);
+
+	        //increment counter
+	        InUse++;
+	    }
+	}
+
+	Writing To File:
+
+	using (StreamWriter SW = new StreamWriter("data1.txt", true))
+	{
+	    arr[InUse] = new Person(newName, newOffice, newPhone);
+	    InUse++;
+	    SW.WriteLine(newName);
+	    SW.WriteLine(newOffice);
+	    SW.WriteLine(newPhone);
+	    SW.Close();
+	}
+
+
+Interfaces
+	
+Functionalities that a class/struct can implement
+Usually public
+A class or struct may implement several interfaces and an interface may be implemented by many classes or structs.
+Format:
+public interface IName
+{ // methods, properties, indexers, events }
+
+public class ClassName : IName
+{ ... }
+
+Interfaces We Know:
+IComparable interface: Used to sort an array or reference types
+public int CompareTo(Person other)
+{ return name.CompareTo(other.name); }
+
+IEquatable interface: Used by methods like Contains() of the List collection 
+bool Equals(T Other) { 
+if (this.uniqueSsn == other.uniqueSsn)
+	return true;
+else
+	return false;
+}
+
+Illegal Explicit Casting
+
+	Casting a bool to something else
+
+
+Properties
+
+	A public member of a class that gives a way to read/write to a private field 
+	Accessors are get/set to read/write a value
+
+	t.Hours = 24; //invokes set
+	System.Console.WriteLine("Time in hours: " + t.Hours); //invokes get
+
+	public double Hours
+	      {
+	       get { return seconds / 3600; }
+	       set { seconds = value * 3600; }
+	      }
+
+
+Indexers
+
+	Allows us to access array (or array like) data members of a class
+	Indexers have one argument, and it's the same type as the array it's going to index to
+
+	public class IntList {
+		int T[100];
+		public int this[int I] {  // This is the indexer.  It is very simple.
+			get { return T[I]; }
+			set { T[I] = value; }
+	  	}
+	}
+
+	IntList MyInts; //later on
+
+	We can now use [] with MyInts:
+	MyInts[3] = 8;
+	int J = MyInts[5] + 2;
+
+
+Forms
+
+	Form controls: GroupBox, Radio Buttons, TextBox, ListBox, Buttons, CheckBox, 
+	Forms close by Application.Exit();
+
+	Form projects have 3 files: 
+	Program.cs: where the main function lives
+	Form1.cs: where our classes and event handlers go
+	Form1.Designer.cs: where the code for the UI of the form goes, mostly auto generated
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
